@@ -18,8 +18,4 @@ pool.getConnection((err, connection) => {
 });
 
 
-<<<<<<< HEAD
 module.exports = pool;
-=======
-module.exports = pool;
->>>>>>> f2ce08cacac44a3589f5ad871365bb48d0cf367b
