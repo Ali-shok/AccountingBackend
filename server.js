@@ -3,6 +3,10 @@ const app = express();
 const payments = require("./routers/payments");
 const user = require("./routers/users");
 const signin = require("./routers/signin");
+const service = require("./routers/services");
+const category = require("./routers/category");
+
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,6 +22,10 @@ app.use(express.json());
 app.use('/',signin);
 app.use('/',payments);
 app.use('/',user);
+app.use('/',service);
+app.use('/',category);
+
+
 
 
 app.listen(3000, () => {
