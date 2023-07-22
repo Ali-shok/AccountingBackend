@@ -5,6 +5,10 @@ const user = require("./routers/users");
 const signin = require("./routers/signin");
 const service = require("./routers/services");
 const category = require("./routers/category");
+const employeeKind = require("./routers/employee-kind");
+const customerKind = require("./routers/customer-kind");
+
+
 
 
 
@@ -24,6 +28,10 @@ app.use('/',payments);
 app.use('/',user);
 app.use('/',service);
 app.use('/',category);
+app.use('/',employeeKind);
+app.use('/',customerKind);
+
+
 
 
 

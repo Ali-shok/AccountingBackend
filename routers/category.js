@@ -15,25 +15,9 @@ router.get('/category', (req, res) => {
     });
   });
 
-  router.delete('/category/:id', (req, res) => {
-    const categoryId = req.params.id;
-    db.query('DELETE FROM `mydatabase`.`category` WHERE `id` = ?', [categoryId], (err, result) => {
-      if (err) {
-        console.error('Error executing query:', err);
-        res.status(500).json({ error: 'Internal Server Error' });
-      } else {
-        if (result.affectedRows === 0) {
-          res.status(404).json({ error: 'Category not found' });
-        } else {
-          res.json({ message: 'Category deleted successfully' });
-        }
-      }
-    });
-  });
+ 
 
-
-
-  router.post('/insertData_category', (req, res) => {
+router.post('/insertData_category', (req, res) => {
     const { name, note } = req.body;
   
     // Perform database insert query
@@ -74,7 +58,26 @@ router.put('/category/:id', (req, res) => {
       }
     );
   });
+
+router.delete('/category/:id', (req, res) => {
+    const categoryId = req.params.id;
+    db.query('DELETE FROM `mydatabase`.`category` WHERE `id` = ?', [categoryId], (err, result) => {
+      if (err) {
+        console.error('Error executing query:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+      } else {
+        if (result.affectedRows === 0) {
+          res.status(404).json({ error: 'Category not found' });
+        } else {
+          res.json({ message: 'Category deleted successfully' });
+        }
+      }
+    });
+  });
+
+
   
+
 
 
 module.exports = router;
