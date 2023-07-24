@@ -15,16 +15,7 @@ router.get('/admin', (req, res) => {
   });
 
 
-  router.get('/employee', (req, res) => {
-    db.query('SELECT * FROM `mydatabase`.`employee`', (err, rows) => {
-      if (err) {
-        console.error('Error executing query:', err);
-        res.status(500).json({ error: 'Internal Server Error' });
-      } else {
-        res.json(rows);
-      }
-    });
-  });
+
 
   module.exports = router;
 
